@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('background.png');
+    background-image: url('image 36.png');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Убираем скролл страницы, если он не нужен */
+    overflow: hidden; 
 }
 
 /* Затемнение фона страницы */
@@ -30,7 +30,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Чуть темнее, чтобы выделить окно */
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -40,7 +40,7 @@ body::before {
     
     width: 990px;
     height: 707px;
-    aspect-ratio: 990 / 707; /* Сохраняем пропорции окна */
+    aspect-ratio: 990 / 707; 
 
     max-width: 95vw; 
     max-height: 95vh;
@@ -67,15 +67,15 @@ body::before {
 /* --- БЕЛАЯ ФОРМА --- */
 .auth-card {
     background-color: #FFFFFF;
-    width: 420px; /* Оптимальная ширина для полей ввода */
+    width: 420px; 
     padding: 50px 40px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Центрируем элементы по вертикали */
+    justify-content: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    overflow: hidden; /* Убираем возможные переполнения */
+    overflow: hidden; 
 }
 
 /* Поля ввода */
@@ -97,11 +97,11 @@ body::before {
 .input-group input {
     width: 100%;
     height: 50px;
-    background-color: #E6E6E6; /* Серый фон инпута */
+    background-color: #E6E6E6; 
     border: none;
     border-radius: 8px;
     font-size: 18px;
-    text-align: center; /* Текст по центру */
+    text-align: center; 
     outline: none;
     transition: 0.3s;
 }
@@ -117,7 +117,7 @@ body::before {
     color: #FFFFFF;
     border: none;
     height: 50px;
-    width: 100%; /* Ширина кнопки такая же, как у полей ввода */
+    width: 100%; 
     border-radius: 25px;
     font-size: 18px;
     font-weight: 500;
@@ -149,3 +149,4 @@ body::before {
 .footer-link a:hover {
     text-decoration: underline;
 }
+
