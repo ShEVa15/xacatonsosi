@@ -1,3 +1,5 @@
+
+
 /* --- Сброс и базовые настройки --- */
 * {
     margin: 0;
@@ -25,6 +27,10 @@ header {
     position: relative;
     z-index: 10;
     color: white;
+}
+
+a {
+  text-decoration: none;
 }
 
 .logo-area {

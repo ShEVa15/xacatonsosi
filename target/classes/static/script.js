@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.innerText = 'Вход...';
         
         setTimeout(() => {
-            alert(`Данные отправлены!\nЛогин: ${loginValue}`);
             btn.innerText = originalText;
         }, 500);
     });

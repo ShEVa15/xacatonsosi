@@ -8,17 +8,34 @@ public class MainController {
 
     @GetMapping("/")
     public String home() {
-        return "login";
+        return "main_fr";
     }
 
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "index";
     }
 
-    @GetMapping("/welcome")
+    @GetMapping("/courses")
     public String welcome() {
-        return "welcome"; // → welcome.html
+        return "index3"; // → main_fr.html
     }
+
+    @GetMapping("/welcome1")
+    public String welcome1() {
+        return "welcome1"; // → main_fr.html
+    }
+
+    @GetMapping("/welcome2")
+    public String welcome2() {
+        return "welcome2"; // → main_fr.html
+    }
+
+    @GetMapping("/welcome3")
+    public String welcome3() {
+        return "welcome3"; // → main_fr.html
+    }
+
+
 
 }
