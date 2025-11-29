@@ -3,62 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSB Platform</title>
+    <title>PSB Platform - Курс Frontend</title>
     <link rel="stylesheet" href="/wel_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <div class="logo-area">
-        <div class="logo-circle"></div>
-        <span class="logo-text">PSB</span>
+<header class="new-header">
+    <div class="header-left">
+        <div class="brand-area">
+            <div class="logo-icon-box">
+                <img src="/img0/logo.png" alt="Логотип ПСБ" class="real-logo">
+            </div>
+            <span class="brand-text">ПСБ</span>
+        </div>
+
+        <nav class="header-nav">
+            <a href="welcome.html" class="nav-link active">Меню</a>
+            <a href="course.html" class="nav-link">Курсы</a>
+            <a href="#" class="nav-link">Вкладка</a>
+            <a href="#" class="nav-link">Вкладка</a>
+        </nav>
     </div>
 
-    <nav class="tabs">
-        <span class="tab active">Вкладка</span>
-        <span class="tab">Вкладка</span>
-        <span class="tab">Вкладка</span>
-        <span class="tab">Вкладка</span>
-    </nav>
+    <div class="header-icons">
+        <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+        </button>
 
-    <div class="user-menu">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+        <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </button>
+
+        <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </button>
     </div>
 </header>
 
-<div class="hero-image-container">
-    <img src="/img/image-31.png" alt="Code Background" class="hero-img">
+<div class="hero-visual">
+    <div class="code-glow-bg"></div>
+
+    <div class="code-editor-window">
+        <div class="window-bar">
+            <div class="win-btn red"></div>
+            <div class="win-btn yellow"></div>
+            <div class="win-btn green"></div>
+            <div class="win-title">api.psb.ru — transaction.js</div>
+        </div>
+
+        <div class="code-content">
+<pre><code><span class="comment">// PSB Platform API Secure Transaction</span>
+<span class="keyword">const</span> <span class="func">initiateSecureTransaction</span> = <span class="keyword">async</span> (userId, amount) => {
+  <span class="keyword">try</span> {
+    <span class="obj">console</span>.<span class="method">log</span>(<span class="str">`Processing transaction for <span class="var">${userId}</span>...`</span>);
+
+    <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="func">fetch</span>(<span class="str">'https://api.psb.ru/v2/finance'</span>, {
+      <span class="prop">method</span>: <span class="str">'POST'</span>,
+      <span class="prop">headers</span>: {
+        <span class="str">'Authorization'</span>: <span class="str">`Bearer <span class="var">${TOKEN}</span>`</span>,
+        <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+      },
+      <span class="prop">body</span>: <span class="obj">JSON</span>.<span class="method">stringify</span>({ <span class="prop">account</span>: userId, <span class="prop">value</span>: amount })
+    });
+
+    <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="method">json</span>();
+    <span class="keyword">return</span> { <span class="prop">success</span>: <span class="bool">true</span>, <span class="prop">id</span>: data.transactionId };
+
+  } <span class="keyword">catch</span> (error) {
+    <span class="keyword">return</span> { <span class="prop">success</span>: <span class="bool">false</span>, <span class="prop">error</span>: error.message };
+  }
+};</code></pre>
+        </div>
+    </div>
 </div>
 
 <main class="main-container">
+    <div class="dashboard-grid">
 
-    <div class="card full-width">
-        <div class="card-header">Чаты и комментарии</div>
-    </div>
-
-    <div class="grid-row">
-        <div class="card half-width">
-            <div class="card-header underline-orange">Следующий шаг</div>
-            <div class="card-bottom">
-                <button class="btn-primary">Перейти</button>
+        <div class="card full-width">
+            <div class="card-header">Уведомления</div>
+            <div class="card-content placeholder-text">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 8px; height: 8px; background: #E68A45; border-radius: 50%;"></span>
+                    У вас 3 непрочитанных сообщения от ментора и 1 новое код-ревью.
+                </div>
             </div>
         </div>
 
-        <div class="card half-width">
-            <div class="card-header underline-orange">Рейтинг</div>
+        <div class="card">
+            <div class="card-header underline-orange">Текущий модуль</div>
+            <div class="card-body">
+                <h3 style="margin-bottom: 10px; color: #333;">Asynchronous JS</h3>
+                <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Разбор Event Loop, Promises и async/await.</p>
+                <div class="mt-auto">
+                    <button class="btn-primary">Продолжить</button>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="card full-width roadmap-card">
-        <div class="card-header">Роадмеп</div>
-        <div class="card-bottom right-align">
-            <button class="btn-primary" style="width: 150px;">Перейти</button>
+        <div class="card">
+            <div class="card-header underline-orange">Рейтинг группы</div>
+            <div class="card-body centered-content">
+                <div class="rank-circle">
+                    <span>TOP</span>
+                    <strong>5%</strong>
+                </div>
+                <p style="text-align: center; margin-top: 10px; color: #666;">Вы опережаете график</p>
+            </div>
         </div>
-    </div>
 
+        <div class="card full-width roadmap-card" id="roadmapComponent">
+            <div class="card-header">Роадмеп курса: Senior Frontend</div>
+
+            <div class="roadmap-container">
+                <div class="roadmap-steps-wrapper">
+                    <div class="roadmap-progress-line"></div>
+                    <div class="roadmap-steps" id="roadmapSteps">
+                    </div>
+                </div>
+
+                <div class="roadmap-details">
+                    <div class="details-text" id="detailsContent">
+                        <h3 id="stepTitle">Загрузка...</h3>
+                        <div class="step-meta">
+                            <span class="badge" id="stepDuration"></span>
+                            <span class="badge status-badge" id="stepStatus"></span>
+                        </div>
+                        <p id="stepDesc">Пожалуйста, подождите</p>
+                    </div>
+
+                    <div class="card-footer-right">
+                        <button class="btn-primary" id="stepActionBtn" style="min-width: 180px;">Начать модуль</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </main>
 
+<script src="/roadmap.js"></script>
 </body>
 </html>

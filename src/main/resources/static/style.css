@@ -1,4 +1,14 @@
-/* Сброс стандартных отступов */
+/* --- 1. Основные настройки и переменные (совпадают с платформой) --- */
+:root {
+    --bg-dark: #051429;
+    --card-bg: #ffffff;
+    --orange-primary: #e37e35;
+    --orange-hover: #d36d25;
+    --text-main: #333333;
+    --border-color: #d1d1d1;
+    --input-focus: #999;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,147 +16,153 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('image 36.png');
-    background-size: cover; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    /* Фон с микросхемами */
+    background-image:
+            radial-gradient(circle at 50% 20%, rgba(20, 60, 100, 0.6) 0%, transparent 70%),
+            repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 40px);
+    /* Если у вас есть фоновая картинка, раскомментируйте строку ниже и добавьте url */
+    /* , url('background.jpg'); */
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-color: #0b1a30; /* Резервный цвет */
-    
-    height: 100vh;
-    width: 100%;
-    
+
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Убираем скролл страницы, если он не нужен */
+    color: var(--text-main);
 }
 
-/* Затемнение фона страницы */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Чуть темнее, чтобы выделить окно */
-    z-index: -1;
-}
-
-/* --- СИНЕЕ ОКНО (Главный блок) --- */
-.auth-container {
-    background-color: #0E2C52; /* Ваш синий цвет */
-    
-    width: 990px;
-    height: 707px;
-    aspect-ratio: 990 / 707; /* Сохраняем пропорции окна */
-
-    max-width: 95vw; 
-    max-height: 95vh;
-
-    border-radius: 30px; /* Скругление углов синего окна */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Глубокая тень */
-    
+.main-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: relative;
+    gap: 20px; /* Немного уменьшил отступ между лого и карточкой */
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    animation: fadeIn 0.6s ease-out;
 }
 
-/* Заголовок "Авторизация" */
-.auth-title {
-    color: #FFFFFF;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 50px; /* Отступ от заголовка до белой формы */
-    letter-spacing: 0.5px;
+/* --- Логотип и брендинг --- */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Чуть больше расстояние между знаком и текстом */
+    color: white;
+    font-size: 26px; /* Шрифт чуть крупнее для кириллицы */
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* --- БЕЛАЯ ФОРМА --- */
+/* Стили для изображения логотипа */
+.logo-img {
+    height: 36px; /* Высота логотипа */
+    width: auto;  /* Ширина подстроится автоматически */
+    display: block;
+}
+
+/* --- Белая карточка --- */
 .auth-card {
-    background-color: #FFFFFF;
-    width: 420px; /* Оптимальная ширина для полей ввода */
-    padding: 50px 40px;
-    border-radius: 25px;
+    background-color: var(--card-bg);
+    width: 100%;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Центрируем элементы по вертикали */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    overflow: hidden; /* Убираем возможные переполнения */
 }
 
-/* Поля ввода */
+.auth-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-main);
+}
+
+/* --- Поля ввода --- */
 .input-group {
     width: 100%;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
 .input-group label {
-    color: #000000;
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-weight: 400;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    margin-left: 5px;
 }
 
 .input-group input {
     width: 100%;
-    height: 50px;
-    background-color: #E6E6E6; /* Серый фон инпута */
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    text-align: center; /* Текст по центру */
+    height: 48px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 15px;
+    color: var(--text-main);
     outline: none;
-    transition: 0.3s;
+    transition: border 0.2s, box-shadow 0.2s;
+    font-family: inherit;
 }
 
 .input-group input:focus {
-    background-color: #dcdcdc;
-    box-shadow: 0 0 0 2px rgba(14, 44, 82, 0.2);
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
 }
 
-/* Кнопка "Войти" */
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+/* --- Кнопка --- */
 .submit-btn {
-    background-color: #E95626; /* Оранжевый цвет */
-    color: #FFFFFF;
+    width: 100%;
+    height: 48px;
+    background-color: var(--orange-primary);
+    color: white;
     border: none;
-    height: 50px;
-    width: 100%; /* Ширина кнопки такая же, как у полей ввода */
-    border-radius: 25px;
-    font-size: 18px;
+    border-radius: 12px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     margin-top: 10px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 10px rgba(233, 86, 38, 0.4);
-    transition: hover 0.2s;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(227, 126, 53, 0.3);
+    transition: background 0.2s, transform 0.1s;
 }
 
-/* Эффект для кнопки */
 .submit-btn:hover {
-    background-color: #d84a1d;
+    background-color: var(--orange-hover);
 }
 
-/* Ссылка "Забыли пароль?" */
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* --- Ссылка внизу --- */
 .footer-link {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    text-align: center;
 }
 
 .footer-link a {
-    color: #000000;
+    color: #888;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 13px;
+    transition: color 0.2s;
 }
 
 .footer-link a:hover {
-    text-decoration: underline;
+    color: var(--orange-primary);
 }
 
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
