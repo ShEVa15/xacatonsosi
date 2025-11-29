@@ -1,0 +1,445 @@
+/* --- 1. Основные настройки и переменные --- */
+:root {
+    --bg-dark: #051429;      /* Темно-синий фон страницы */
+    --card-bg: #ffffff;      /* Белый фон карточки */
+    --orange-primary: #e37e35; /* Цвет кнопки */
+    --orange-hover: #d36d25;
+    --text-main: #333333;
+    --text-secondary: #666666;
+    --border-color: #d1d1d1;
+    --code-glow-blue: #00aeff;
+    --code-keyword: #c678dd;
+    --code-string: #98c379;
+    --code-func: #61afef;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    /* Сложный фон имитирующий микросхемы/линии */
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(20, 60, 100, 0.5) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 40px);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- 2. Хедер --- */
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(5, 20, 41, 0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo-circle {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 24px 0; /* Чтобы линия была внизу хедера */
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: white; }
+
+nav a.active {
+    color: white;
+}
+
+/* Линия под активной вкладкой */
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--orange-primary);
+    box-shadow: 0 -2px 10px rgba(227, 126, 53, 0.5);
+}
+
+.header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+}
+
+/* --- 3. Секция с кодом (Hero) --- */
+.hero-container {
+    margin-top: 100px;
+    margin-bottom: -60px; /* Чтобы карточка наехала на код */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Стилизация блока кода (Glassmorphism) */
+.code-window {
+    width: 700px;
+    background: rgba(18, 32, 56, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #abb2bf;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект свечения */
+.code-window::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 174, 255, 0.05), transparent 60%);
+    pointer-events: none;
+}
+
+/* Подсветка синтаксиса */
+.kwd { color: #c678dd; } /* violet */
+.func { color: #61afef; } /* blue */
+.str { color: #d19a66; } /* orange/brown */
+.var { color: #e06c75; } /* red */
+.prop { color: #d19a66; }
+.comment { color: #5c6370; font-style: italic; }
+.token { color: #56b6c2; } /* cyan */
+
+/* --- 4. Основная карточка (Белая) --- */
+.main-card {
+    background-color: var(--card-bg);
+    width: 90%;
+    max-width: 960px;
+    margin-top: 100px;
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+}
+
+.label-small {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Блок видео и презентации (Split view) */
+.media-block {
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #000;
+  opacity: 1;
+  z-index: 9999;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.modal-body {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 8px 20px;
+    background-color: var(--orange-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.video-side {
+    flex: 1.3;
+    background: #000;
+    position: relative;
+    min-height: 300px;
+    /* Заглушка */
+    background-image: url('https://placehold.co/600x400/333/999?text=Video+Player');
+    background-size: cover;
+    background-position: center;
+}
+
+.video-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.slides-side {
+    flex: 1;
+    padding: 25px;
+    background: #f9f9f9;
+}
+
+.slide-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+    line-height: 1.3;
+}
+
+.slide-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    background: #fff; 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    align-items: flex-start;
+}
+
+.slide-icon {
+    font-size: 18px;
+    color: #666;
+    margin-top: 2px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.slide-text strong {
+    display: block;
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 2px;
+}
+.slide-text {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Поля ввода (Input fields) */
+.input-group {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text-area-styled {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    background-color: #fff;
+    transition: border 0.2s;
+}
+
+.text-area-styled:focus {
+    border-color: #999;
+}
+
+.task-area {
+    height: 80px;
+    background-color: #fff;
+}
+
+/* Контейнер решения с футером */
+.solution-container {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.solution-input {
+    width: 100%;
+    height: 120px;
+    border: none;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+}
+
+.solution-footer {
+    background-color: #f7f7f7;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+/* Кнопка скрепки */
+.attach-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Кнопка Отправить */
+.submit-btn {
+    background-color: var(--orange-primary);
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(227, 126, 53, 0.3);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: var(--orange-hover);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+.comments-area {
+    height: 150px;
+}
