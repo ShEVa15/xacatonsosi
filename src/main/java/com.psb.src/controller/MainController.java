@@ -18,6 +18,7 @@ public class MainController {
 
     @GetMapping("/welcome")
     public String welcome() {
-        return "welcome";
+        return "welcome"; // → welcome.html
     }
+
 }

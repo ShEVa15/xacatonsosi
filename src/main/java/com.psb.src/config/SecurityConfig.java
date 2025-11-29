@@ -19,11 +19,6 @@ public class SecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService() {
-        return new com.psb.src.service.CustomUserDetailsService();
-    }
-
-    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authz -> authz
@@ -38,7 +33,9 @@ public class SecurityConfig {
             .logout(logout -> logout
                 .logoutSuccessUrl("/")
                 .permitAll()
-            );
+            )
+                .csrf(csrf -> csrf.disable());
+
         return http.build();
     }
 }
