@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSB Platform</title>
+    <link rel="stylesheet" href="/wel_style.css">
 </head>
 <body>
-<h1>Добро пожаловать!</h1>
-<p>Вы успешно вошли в систему.</p>
-<form th:action="@{/logout}" method="post">
-    <button type="submit">Выйти</button>
-</form>
+
+<header>
+    <div class="logo-area">
+        <div class="logo-circle"></div>
+        <span class="logo-text">PSB</span>
+    </div>
+
+    <nav class="tabs">
+        <span class="tab active">Вкладка</span>
+        <span class="tab">Вкладка</span>
+        <span class="tab">Вкладка</span>
+        <span class="tab">Вкладка</span>
+    </nav>
+
+    <div class="user-menu">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</header>
+
+<div class="hero-image-container">
+    <img src="/img/image-31.png" alt="Code Background" class="hero-img">
+</div>
+
+<main class="main-container">
+
+    <div class="card full-width">
+        <div class="card-header">Чаты и комментарии</div>
+    </div>
+
+    <div class="grid-row">
+        <div class="card half-width">
+            <div class="card-header underline-orange">Следующий шаг</div>
+            <div class="card-bottom">
+                <button class="btn-primary">Перейти</button>
+            </div>
+        </div>
+
+        <div class="card half-width">
+            <div class="card-header underline-orange">Рейтинг</div>
+        </div>
+    </div>
+
+    <div class="card full-width roadmap-card">
+        <div class="card-header">Роадмеп</div>
+        <div class="card-bottom right-align">
+            <button class="btn-primary" style="width: 150px;">Перейти</button>
+        </div>
+    </div>
+
+</main>
+
 </body>
 </html>
