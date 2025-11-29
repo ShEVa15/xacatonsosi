@@ -1,45 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSB Platform</title>
-    <link rel="stylesheet" href="/wel_style.css">
+    <title>Welcome</title>
 </head>
 <body>
-    <!-- Шапка -->
-    <header class="header">
-        <div class="logo">PSB</div>
-        <nav class="navbar">
-            <a href="#">Вкладка</a>
-            <a href="#">Вкладка</a>
-            <a href="#">Вкладка</a>
-            <a href="#">Вкладка</a>
-        </nav>
-        <div class="menu">
-            <button class="menu-btn"></button>
-        </div>
-    </header>
-
-    <!-- Контейнер с карточками -->
-    <div class="container">
-        <div class="auth-wrapper">
-            <div class="auth-card">
-                <h3>Чаты и комментарии</h3>
-                <div class="input-group"></div>
-            </div>
-            <div class="auth-card">
-                <h3>Следующий шаг</h3>
-                <button class="btn-login">Перейти</button>
-            </div>
-            <div class="auth-card">
-                <h3>Рейтинг</h3>
-            </div>
-            <div class="auth-card">
-                <h3>Роадмэп</h3>
-                <button class="btn-login">Перейти</button>
-            </div>
-        </div>
-    </div>
+<h1>Добро пожаловать!</h1>
+<p>Вы успешно вошли в систему.</p>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Выйти</button>
+</form>
 </body>
 </html>
