@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформа ПСБ</title>
+    <link rel="stylesheet" href="/style3.css">
+</head>
+<body>
+
+
+<header>
+    <link rel="stylesheet" href="/style_head.css" >
+    <div class="header-left">
+        <div class="logo">
+            <img src="/logo.png" alt="Логотип">
+            ПСБ
+        </div>
+        <nav>
+            <a href="/">Меню</a>
+            <a href="/courses" class="active">Курсы</a>
+            <a href="#">Вкладка</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </div>
+
+    <div class="header-right">
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </div>
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg>
+        </div>
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+    </div>
+</header>
+
+    <div class="hero-container">
+        <div class="code-window">
+            <div style="margin-bottom: 10px; color: #5c6370;">// PSB Platform API</div>
+            <div>
+                <span class="kwd">const</span> <span class="func">initiateSecureTransaction</span> = <span class="kwd">async</span> (userId, amount) => {<br>
+                &nbsp;&nbsp;<span class="kwd">try</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.<span class="func">log</span>(<span class="str">`Processing transaction for <span class="var">${userId}</span>...`</span>);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">const</span> response = <span class="kwd">await</span> <span class="func">fetch</span>(<span class="str">'https://api.psb.ru/v2/finance'</span>, {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">method</span>: <span class="str">'POST'</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">headers</span>: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Authorization'</span>: <span class="str">`Bearer <span class="token">${TOKEN}</span>`</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Content-Type'</span>: <span class="str">'application/json'</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">body</span>: JSON.<span class="func">stringify</span>({ <span class="prop">account</span>: userId, <span class="prop">value</span>: amount })<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">const</span> data = <span class="kwd">await</span> response.<span class="func">json</span>();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">return</span> { <span class="prop">success</span>: <span class="kwd">true</span>, <span class="prop">id</span>: data.transactionId };<br>
+                &nbsp;&nbsp;} <span class="kwd">catch</span> (error) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">return</span> { <span class="prop">success</span>: <span class="kwd">false</span>, <span class="prop">error</span>: error.message };<br>
+                &nbsp;&nbsp;}<br>
+                };
+            </div>
+        </div>
+    </div>
+
+    <main class="main-card">
+        
+        <span class="label-small">тема</span>
+        
+        <div class="media-block">
+            <div class="video-side">
+                <img src="img/Group 12.png" alt="Видео-презентация">
+            </div>
+            <div class="slides-side">
+                <div class="slide-title">Рынок труда как источник<br>системной боли</div>
+                
+                <div class="slide-item">
+                    <div class="slide-icon">💸</div>
+                    <div class="slide-text">
+                        <strong>Взлетающие затраты на ФОТ:</strong>
+                        Чтобы переманить или удержать специалиста, нужно постоянно повышать зарплату.
+                    </div>
+                </div>
+
+                <div class="slide-item">
+                    <div class="slide-icon">👤</div>
+                    <div class="slide-text">
+                        <strong>Токсичная гибкость:</strong>
+                        Сотрудники, зная свою востребованность, могут позволять себе больше, что снижает общую дисциплину.
+                    </div>
+                </div>
+
+                <div class="slide-item">
+                    <div class="slide-icon">⛔</div>
+                    <div class="slide-text">
+                        <strong>Простои и замедление роста:</strong>
+                        Нельзя масштабироваться, если просто некому работать. Открытие нового направления упирается в поиск.
+                    </div>
+                </div>
+
+                <div class="slide-item">
+                    <div class="slide-icon">🧠</div>
+                    <div class="slide-text">
+                        <strong>Утрата ключевых компетенций:</strong>
+                        С уходом опытных сотрудников уходит экспертиза.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="section-header">Задание</div>
+            <textarea class="text-area-styled task-area" placeholder="Вам надо в этом уроке хуйца посасать короче" disabled></textarea>
+        </div>
+
+        <div class="input-group">
+            <div class="section-header">Ввести решение...</div>
+            <div class="solution-container">
+                <textarea class="solution-input" placeholder="Напишите ваш ответ здесь..."></textarea>
+                <div class="solution-footer">
+                    <div class="attach-btn">
+                        <img src="/img/octicon_paperclip-16.png" alt="Скрепка">
+                        Загрузить файл решения
+                    </div>
+                    <button class="image-submit-btn">
+                        <img src="/Group 7.png" alt="Отправить">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="section-header">Оценки и комментарии</div>
+            <textarea class="text-area-styled comments-area"></textarea>
+        </div>
+
+    </main>
+
+</body>
+</html>
