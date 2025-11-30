@@ -319,7 +319,6 @@ code {
 .mt-auto { margin-top: auto; }
 .card-footer-right { margin-top: auto; display: flex; justify-content: flex-end; }
 
-/* --- Кнопки --- */
 .btn-primary {
     background-color: var(--primary-orange);
     color: white;
@@ -341,7 +340,6 @@ code {
 
 .btn-primary:hover { filter: brightness(1.05); }
 
-/* --- Роадмеп и прочее --- */
 .roadmap-card { min-height: 350px; display: flex; flex-direction: column; }
 .roadmap-container { display: flex; flex-direction: column; gap: 30px; flex-grow: 1; }
 
@@ -422,12 +420,11 @@ code {
     color: var(--primary-orange);
 }
 
-/* --- АДАПТИВНОСТЬ --- */
+
 @media (max-width: 900px) {
-    /* На планшетах делаем код менее агрессивным */
     .hero-visual { top: 120px; }
     .code-editor-window { transform: rotateX(0) rotateY(0); animation: none; width: 90%; }
-    .main-container { margin-top: 500px; /* Сдвигаем контент ниже, чтобы код влез */ }
+    .main-container { margin-top: 500px; }
 }
 
 @media (max-width: 768px) {
@@ -437,12 +434,12 @@ code {
     .hero-visual {
         top: 80px;
         perspective: none;
-        opacity: 0.6; /* Приглушаем */
+        opacity: 0.6;
     }
     .code-editor-window {
         transform: scale(0.8);
         animation: none;
-        backdrop-filter: none; /* Производительность */
+        backdrop-filter: none;
     }
 
     .main-container {
@@ -452,26 +449,25 @@ code {
     }
     .dashboard-grid { grid-template-columns: 1fr; }
 }
-/* === НОВАЯ ШАПКА (Стиль PSB) === */
 
 .new-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; /* Отступы по бокам */
-    height: 70px; /* Фиксированная высота как на скрине */
-    background-color: #031129; /* Глубокий темно-синий цвет */
+    padding: 0 40px;
+    height: 70px;
+    background-color: #031129;
     position: relative;
     z-index: 50;
     color: white;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05); /* Тонкая линия снизу */
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Левая группа (Лого + Меню) */
+
 .header-left {
     display: flex;
     align-items: center;
-    gap: 60px; /* Расстояние между лого и меню */
+    gap: 60px;
 }
 
 /* Логотип */
@@ -485,7 +481,7 @@ code {
     width: 32px;
     height: 32px;
     background-color: #FFFFFF;
-    border-radius: 6px; /* Закругленный квадрат */
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,14 +494,13 @@ code {
     color: white;
 }
 
-/* Навигация */
 .header-nav {
     display: flex;
     gap: 30px;
 }
 
 .nav-link {
-    color: #8E9AA9; /* Серый цвет для неактивных */
+    color: #8E9AA9;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -517,10 +512,9 @@ code {
 }
 
 .nav-link.active {
-    color: #FFFFFF; /* Белый для активной */
+    color: #FFFFFF;
 }
 
-/* Правая группа (Иконки) */
 .header-icons {
     display: flex;
     align-items: center;
@@ -531,7 +525,7 @@ code {
     background: none;
     border: none;
     cursor: pointer;
-    color: #C0C5CE; /* Светло-серый цвет иконок */
+    color: #C0C5CE;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -545,31 +539,29 @@ code {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Адаптив для новой шапки */
+
 @media (max-width: 768px) {
     .new-header { padding: 0 20px; }
-    .header-nav { display: none; } /* Скрываем меню на мобильных */
+    .header-nav { display: none; }
     .header-left { gap: 0; }
 }
-/* --- Стили для картинки логотипа --- */
 
-/* Убедимся, что картинка ведет себя правильно внутри квадрата */
 .real-logo {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Сохраняет пропорции, вписывая картинку */
+    object-fit: contain;
     display: block;
-    padding: 4px; /* Небольшой отступ, чтобы логотип "дышал" внутри квадрата */
+    padding: 4px;
 }
 
-/* Обновляем контейнер (если вдруг старые стили мешают) */
+
 .logo-icon-box {
     width: 32px;
     height: 32px;
     background-color: #FFFFFF;
-    border-radius: 8px; /* Чуть более мягкие углы, как на iOS */
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Обрезает все, что вылезает за границы */
+    overflow: hidden;
 }

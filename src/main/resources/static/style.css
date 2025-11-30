@@ -38,32 +38,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Немного уменьшил отступ между лого и карточкой */
+    gap: 20px;
     width: 100%;
     max-width: 450px;
     padding: 20px;
     animation: fadeIn 0.6s ease-out;
 }
 
-/* --- Логотип и брендинг --- */
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 15px; /* Чуть больше расстояние между знаком и текстом */
+    gap: 15px;
     color: white;
-    font-size: 26px; /* Шрифт чуть крупнее для кириллицы */
+    font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-/* Стили для изображения логотипа */
+
 .logo-img {
-    height: 36px; /* Высота логотипа */
-    width: auto;  /* Ширина подстроится автоматически */
+    height: 36px;
+    width: auto;
     display: block;
 }
 
-/* --- Белая карточка --- */
 .auth-card {
     background-color: var(--card-bg);
     width: 100%;
@@ -82,7 +80,6 @@ body {
     color: var(--text-main);
 }
 
-/* --- Поля ввода --- */
 .input-group {
     width: 100%;
     margin-bottom: 20px;
@@ -120,7 +117,6 @@ body {
     color: #aaa;
 }
 
-/* --- Кнопка --- */
 .submit-btn {
     width: 100%;
     height: 48px;
@@ -145,7 +141,6 @@ body {
     transform: translateY(1px);
 }
 
-/* --- Ссылка внизу --- */
 .footer-link {
     text-align: center;
 }
@@ -161,7 +156,7 @@ body {
     color: var(--orange-primary);
 }
 
-/* Анимация появления */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

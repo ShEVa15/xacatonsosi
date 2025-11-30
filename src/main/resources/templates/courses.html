@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог курсов | ПСБ</title>
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="stylesheet" href="/catalog.css">
+</head>
+<body>
+
+<header>
+    <link rel="stylesheet" href="/style_head.css" >
+    <div class="header-left">
+        <div class="logo">
+            <img src="/img0/logo.png" alt="Логотип" style="width: 24px; height: 24px">
+            ПСБ
+        </div>
+        <nav>
+            <a href="/welcome">Меню</a>
+            <a href="/course">Курс</a>
+            <a href="/courses" class="active">Каталог курсов</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </div>
+
+    <div class="header-right">
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </div>
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg>
+        </div>
+        <div class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+    </div>
+</header>
+
+    <div class="catalog-container">
+        
+        <div class="catalog-header">
+            <h1 class="page-title">Образовательные программы</h1>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="dev">Разработка</button>
+                <button class="filter-btn" data-filter="management">Менеджмент</button>
+                <button class="filter-btn" data-filter="soft">Soft Skills</button>
+                <button class="filter-btn" data-filter="finance">Финансы</button>
+            </div>
+        </div>
+    
+        <div class="courses-grid">
+            
+            <div class="course-card" data-category="management">
+                <div class="course-image-wrapper">
+                    <span class="course-tag">Менеджмент</span>
+                    <img src="https://placehold.co/600x400/051429/FFF?text=Management" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Рынок труда: Системная боль</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 45%;"></div></div>
+                    <p class="course-desc">Стратегии удержания кадров и оптимизация ФОТ.</p>
+                    <div class="course-meta">
+                        <span>⏳ 2 ч 15 м</span>
+                        <span>👤 И. Иванов</span>
+                    </div>
+                    <a href="/course" class="card-btn">Продолжить</a>
+                </div>
+            </div>
+    
+            <div class="course-card" data-category="dev">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-dev">Разработка</span>
+                    <img src="https://placehold.co/600x400/1e3c72/FFF?text=Frontend" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Frontend Architecture 2025</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="course-desc">Построение масштабируемых интерфейсов.</p>
+                    <div class="course-meta">
+                        <span>⏳ 12 ч 30 м</span>
+                        <span>👤 А. Смирнов</span>
+                    </div>
+                    <a href="/course" class="card-btn">Начать</a>
+                </div>
+            </div>
+    
+            <div class="course-card locked" data-category="finance">
+                <div class="locked-overlay">
+                    <div class="lock-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                </div>
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-fin">Финансы</span>
+                    <img src="https://placehold.co/600x400/2c3e50/FFF?text=Invest" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Инвестиции для ТОП-менеджмента</h3>
+                    <p class="course-desc">Закрытый курс по управлению капиталом.</p>
+                    <div class="course-meta">
+                        <span>⏳ 8 ч 00 м</span>
+                        <span>🔒 Доступ закрыт</span>
+                    </div>
+                    <button class="card-btn" disabled>Нет доступа</button>
+                </div>
+            </div>
+    
+            <div class="course-card" data-category="soft">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-soft">Soft Skills</span>
+                    <img src="https://placehold.co/600x400/e67e22/FFF?text=Emo+Intel" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Эмоциональный интеллект</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 10%;"></div></div>
+                    <p class="course-desc">Управление стрессом и переговоры.</p>
+                    <div class="course-meta">
+                        <span>⏳ 4 ч 45 м</span>
+                        <span>👤 Е. Петрова</span>
+                    </div>
+                    <a href="/course" class="card-btn">Продолжить</a>
+                </div>
+            </div>
+    
+            <div class="course-card locked" data-category="dev">
+                 <div class="locked-overlay">
+                    <div class="lock-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                </div>
+                <div class="course-image-wrapper">
+                    <span class="course-tag">Безопасность</span>
+                    <img src="https://placehold.co/600x400/000000/FFF?text=Security" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Кибербезопасность v2.0</h3>
+                    <p class="course-desc">Протоколы защиты корпоративных данных.</p>
+                    <div class="course-meta">
+                        <span>⏳ 10 ч 00 м</span>
+                        <span>🔒 Доступ закрыт</span>
+                    </div>
+                    <button class="card-btn" disabled>Нет доступа</button>
+                </div>
+            </div>
+    
+            <div class="course-card" data-category="dev">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-dev">Разработка</span>
+                    <img src="https://placehold.co/600x400/444/FFF?text=GoLang" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Backend на Go</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="course-desc">Микросервисы и высокие нагрузки.</p>
+                    <div class="course-meta">
+                        <span>⏳ 20 ч 00 м</span>
+                        <span>👤 Д. Сидоров</span>
+                    </div>
+                    <a href="/course" class="card-btn">Начать</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="management">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-soft">Маркетинг</span>
+                    <img src="https://placehold.co/600x400/8e44ad/FFF?text=Marketing" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Цифровой маркетинг</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                    <p class="course-desc">SEO, SMM и контекстная реклама в 2024.</p>
+                    <div class="course-meta">
+                        <span>⏳ 15 ч 30 м</span>
+                        <span>👤 К. Минина</span>
+                    </div>
+                    <a href="/course" class="card-btn">Продолжить</a>
+                </div>
+            </div>
+
+            <div class="course-card locked" data-category="dev">
+                <div class="locked-overlay">
+                    <div class="lock-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                </div>
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-dev">Data Science</span>
+                    <img src="https://placehold.co/600x400/16a085/FFF?text=BigData" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Big Data & ML</h3>
+                    <p class="course-desc">Продвинутый курс по машинному обучению.</p>
+                    <div class="course-meta">
+                        <span>⏳ 40 ч 00 м</span>
+                        <span>🔒 Доступ закрыт</span>
+                    </div>
+                    <button class="card-btn" disabled>Нет доступа</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="dev">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-soft">Дизайн</span>
+                    <img src="https://placehold.co/600x400/d35400/FFF?text=UX/UI" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">UX/UI Проектирование</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
+                    <p class="course-desc">Создание удобных интерфейсов для финтеха.</p>
+                    <div class="course-meta">
+                        <span>⏳ 18 ч 00 м</span>
+                        <span>👤 О. Кравец</span>
+                    </div>
+                    <a href="/course" class="card-btn">Продолжить</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="management">
+                <div class="course-image-wrapper">
+                    <span class="course-tag">Менеджмент</span>
+                    <img src="https://placehold.co/600x400/7f8c8d/FFF?text=Agile" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Agile и Scrum</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="course-desc">Гибкие методологии управления проектами.</p>
+                    <div class="course-meta">
+                        <span>⏳ 5 ч 00 м</span>
+                        <span>👤 П. Зуев</span>
+                    </div>
+                    <a href="/course" class="card-btn">Начать</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="management">
+                <div class="course-image-wrapper">
+                    <span class="course-tag">Менеджмент</span>
+                    <img src="https://placehold.co/600x400/6A1B9A/FFF?text=HR+Brand" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">HR-Бренд работодателя</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 10%;"></div></div>
+                    <p class="course-desc">Как построить сильный бренд и привлекать таланты.</p>
+                    <div class="course-meta">
+                        <span>⏳ 6 ч 15 м</span>
+                        <span>👤 М. Соколова</span>
+                    </div>
+                    <a href="/course" class="card-btn">Продолжить</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="finance">
+                <div class="course-image-wrapper">
+                    <span class="course-tag tag-fin">Финансы</span>
+                    <img src="https://placehold.co/600x400/2980b9/FFF?text=Blockchain" alt="Курс" class="course-img">
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Блокчейн в банке</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="course-desc">Технологии распределенного реестра в финтехе.</p>
+                    <div class="course-meta">
+                        <span>⏳ 14 ч 40 м</span>
+                        <span>👤 В. Криптов</span>
+                    </div>
+                    <a href="/course" class="card-btn">Начать</a>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filters = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.course-card');
+
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filters.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        card.style.animation = 'none';
+                        card.offsetHeight; /* trigger reflow */
+                        card.style.animation = null; 
+
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeInUp 0.4s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                        document.addEventListener('DOMContentLoaded', () => {
+                            // Загрузка курсов через API
+                            loadCourses();
+
+                            async function loadCourses() {
+                                try {
+                                    const response = await fetch('/api/courses');
+                                    const courses = await response.json();
+                                    renderCourses(courses);
+                                } catch (error) {
+                                    console.error('Error loading courses:', error);
+                                }
+                            }
+
+                            function renderCourses(courses) {
+                                const grid = document.querySelector('.courses-grid');
+                                grid.innerHTML = '';
+
+                                courses.forEach(course => {
+                                    const courseCard = createCourseCard(course);
+                                    grid.appendChild(courseCard);
+                                });
+                            }
+
+                            function createCourseCard(course) {
+                                const card = document.createElement('div');
+                                card.className = `course-card ${course.locked ? 'locked' : ''}`;
+                                card.setAttribute('data-category', course.category);
+
+                                card.innerHTML = `
+            ${course.locked ? `
+                <div class="locked-overlay">
+                    <div class="lock-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                </div>
+            ` : ''}
+
+            <div class="course-image-wrapper">
+                <span class="course-tag ${getTagClass(course.category)}">${getCategoryName(course.category)}</span>
+                <img src="${course.imageUrl}" alt="${course.title}" class="course-img">
+            </div>
+
+            <div class="course-content">
+                <h3 class="course-title">${course.title}</h3>
+                ${!course.locked ? `<div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>` : ''}
+                <p class="course-desc">${course.description}</p>
+                <div class="course-meta">
+                    <span>⏳ ${course.duration}</span>
+                    <span>${course.locked ? '🔒 Доступ закрыт' : `👤 ${course.author}`}</span>
+                </div>
+                ${course.locked ?
+                                    '<button class="card-btn" disabled>Нет доступа</button>' :
+                                    '<a href="/course" class="card-btn">Начать</a>'
+                                }
+            </div>
+        `;
+
+                                return card;
+                            }
+
+                            function getTagClass(category) {
+                                const classes = {
+                                    'dev': 'tag-dev',
+                                    'finance': 'tag-fin',
+                                    'soft': 'tag-soft',
+                                    'management': ''
+                                };
+                                return classes[category] || '';
+                            }
+
+                            function getCategoryName(category) {
+                                const names = {
+                                    'dev': 'Разработка',
+                                    'finance': 'Финансы',
+                                    'soft': 'Soft Skills',
+                                    'management': 'Менеджмент'
+                                };
+                                return names[category] || category;
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
