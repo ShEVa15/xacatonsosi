@@ -1,0 +1,275 @@
+/* --- Специфичные стили для каталога курсов --- */
+
+/* Контейнер каталога */
+.catalog-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    z-index: 10;
+    animation: fadePageIn 0.8s ease-out;
+}
+
+@keyframes fadePageIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Заголовок и фильтры */
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn.active {
+    background: var(--orange-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(227, 126, 53, 0.4);
+}
+
+/* Сетка курсов */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Карточка курса */
+.course-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27), box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* Каскадная анимация */
+.course-card:nth-child(1) { animation-delay: 0.1s; }
+.course-card:nth-child(2) { animation-delay: 0.15s; }
+.course-card:nth-child(3) { animation-delay: 0.2s; }
+.course-card:nth-child(4) { animation-delay: 0.25s; }
+.course-card:nth-child(5) { animation-delay: 0.3s; }
+.course-card:nth-child(6) { animation-delay: 0.35s; }
+.course-card:nth-child(7) { animation-delay: 0.4s; }
+.course-card:nth-child(8) { animation-delay: 0.45s; }
+.course-card:nth-child(9) { animation-delay: 0.5s; }
+.course-card:nth-child(10) { animation-delay: 0.55s; }
+.course-card:nth-child(11) { animation-delay: 0.6s; }
+.course-card:nth-child(12) { animation-delay: 0.65s; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Изображение курса */
+.course-image-wrapper {
+    height: 160px;
+    background: #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-img {
+    transform: scale(1.05);
+}
+
+/* Тег категории */
+.course-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(5, 20, 41, 0.8);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.tag-dev { background: rgba(227, 126, 53, 0.9); }
+.tag-fin { background: rgba(44, 62, 80, 0.9); }
+.tag-soft { background: rgba(39, 174, 96, 0.9); }
+
+/* Контент карточки */
+.course-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.course-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.course-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* Мета-инфо */
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--orange-primary);
+    border-radius: 2px;
+}
+
+/* Кнопка (ссылка) */
+.card-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--orange-primary);
+    color: var(--orange-primary);
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    /* Стили для тега <a> */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card-btn:hover {
+    background: var(--orange-primary);
+    color: white;
+}
+
+/* Блокировка */
+.course-card.locked {
+    filter: grayscale(0.8);
+    pointer-events: none;
+}
+
+.course-card.locked .card-btn {
+    border-color: #999;
+    color: #999;
+}
+
+.locked-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.lock-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .filters {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    .filter-btn {
+        flex-shrink: 0;
+    }
+}
