@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация | ПСБ Платформа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <div class="brand-logo">
+        <img src="/logo.png" alt="Лого" class="logo-img">
+        ПСБ
+    </div>
+
+    <div class="auth-card">
+        <h1 class="auth-title">Авторизация</h1>
+
+        <form th:action="@{/}" method="post">
+            <div class="input-group">
+                <label for="login">Логин</label>
+                <input type="text" id="login" name="username" placeholder="Введите ваш логин" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+            </div>
+
+            <a href="/"><button type="submit" class="submit-btn">Войти</button></a>
+
+            <div class="footer-link">
+                <a href="#">Забыли пароль?</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
